@@ -30,6 +30,5 @@ function randgooglesearchresult(){
 }
 
 function draw() {
-  background(255);
   // put drawing code here to run in a loop
 }
