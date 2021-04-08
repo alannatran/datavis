@@ -18,9 +18,10 @@ function setup() {
   canvas.style("z-index", "-1");
 
   googlesearchP = createP("");
-  googlesearchP.position(230, 50);
+  googlesearchP.position(235, 345);
 
   googlesearchButton = createButton("Search");
+  googlesearchButton.position(windowWidth/4.6,windowHeight/1.6);
   googlesearchButton.mousePressed(randgooglesearchresult);
 
 }
@@ -32,22 +33,48 @@ function randgooglesearchresult(){
 
 function draw() {
   // put drawing code here to run in a loop
-noStroke();
-fill(207,207,207);
-  rect(0,0, windowWidth, windowHeight);
+//grey right side
+  noStroke();
+  fill(207,207,207);
+    rect(0,0, windowWidth, windowHeight);
 
+//white left side
 fill(255,255,255);
   rect(0,0, windowWidth/2, windowHeight);
 
-strokeWeight(1.5);
-stroke(215);
-fill(255,255,255);
-  rect(windowWidth/9,windowHeight/2,400, 50, 50);
+//white search bar on left
+  strokeWeight(1.5);
+  stroke(215);
+  fill(255,255,255);
+    rect(windowWidth/9,windowHeight/2,400, 50, 50);
 
+//circle in magnifying glass
   strokeWeight(3);
   stroke(207);
   fill(255,255,255);
   ellipse(windowWidth/7.8,windowHeight/1.88,20);
+
+//line in magnifying glass
+  strokeWeight(3);
+  stroke(207);
+  line(windowWidth/7.51,windowHeight/1.83,windowWidth/7.3,windowHeight/1.8);
+
+
+//first dot
+  stroke(41,41,41);
+  fill(41,41,41);
+  ellipse(windowWidth/1.4,windowHeight/3.8,8);
+
+//second dot
+  stroke(105,105,105);
+  fill(105,105,105);
+  ellipse(windowWidth/1.33, windowHeight/3.8, 8);
+
+//third dot
+  stroke(135,135,135);
+  fill(135,135,135);
+  ellipse(windowWidth/1.26, windowHeight/3.8, 8);
+
 
 noStroke();
 fill(0,0,0);
