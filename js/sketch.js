@@ -29,6 +29,8 @@ function setup() {
   googlesearchButton.position(windowWidth/4.6,windowHeight/1.6);
   googlesearchButton.mousePressed(randgooglesearchresult);
 
+  frameRate(2);
+
 }
 
 function randgooglesearchresult(){
@@ -36,6 +38,9 @@ function randgooglesearchresult(){
   googlesearchP.html(googlesearchArray[randgooglesearchresultNumber]);
   textInput.value(googlesearchArray[randgooglesearchresultNumber]);
 }
+
+var y = 100;
+var x = 200;
 
 function draw() {
   textFont(productSansRegular);
@@ -68,14 +73,33 @@ fill(255,255,255);
 
 
 //first dot
-  stroke(41,41,41);
-  fill(41,41,41);
-  ellipse(windowWidth/1.4,windowHeight/3.8,8);
+stroke(41,41,41);
+fill(41,41,41);
+ellipse(windowWidth/1.4,windowHeight/3.8,8);
+if(y == 100){
+  stroke(207,207,207);
+  fill(207,207,207);
+  ellipse(windowWidth/1.4, windowHeight/3.8, 8);
+  y = y - 100;
+}
+  else if (y == 0){
+    y = y + 100;
+  }
+
 
 //second dot
   stroke(105,105,105);
   fill(105,105,105);
   ellipse(windowWidth/1.33, windowHeight/3.8, 8);
+  if(x == 200){
+    stroke(207,207,207);
+    fill(207,207,207);
+    ellipse(windowWidth/1.4, windowHeight/3.8, 8);
+    x = x - 200;
+  }
+    else if (x == 0){
+      x = x + 200;
+    }
 
 //third dot
   stroke(135,135,135);
