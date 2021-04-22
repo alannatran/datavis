@@ -1,15 +1,24 @@
 
 let canvas;
+let table;
 
-let googlesearchArray;
+let search;
+let cat1;
+let cat2;
+let cat3;
+let cat4;
+
+
+  //let googlesearchArray;
 let googlesearchButton;
-let randomgooglesearchresultNumber;
-let googlesearchP;
-let textInput;
+  //let randomgooglesearchresultNumber;
+  //let googlesearchP;
+  let textInput;
 
 function preload(){
-  googlesearchArray = loadStrings("txtFiles/googlesearchentries.txt");
+    //googlesearchArray = loadStrings("txtFiles/googlesearchentries.txt");
   productSansRegular = loadFont('fonts/ProductSans-Regular.ttf');
+  table = loadTable('csvFiles/search&categories.csv', 'csv', 'header');
 }
 
 function setup() {
@@ -18,29 +27,37 @@ function setup() {
   canvas.position(0, 0);
   canvas.style("z-index", "-1");
 
-  googlesearchP = createP("");
-  googlesearchP.position(235, 345);
+//randomized search generator with txt file
+    //googlesearchP = createP("");
+    //googlesearchP.position(235, 345);
 
-  textInput = createInput();
-  textInput.position(windowWidth/9,windowHeight/2);
+googlesearchButton = createButton("Search");
+googlesearchButton.position(windowWidth/4.6,windowHeight/1.6);
+//googlesearchButton.mousePressed(randgooglesearchresult);
 
-
-  googlesearchButton = createButton("Search");
-  googlesearchButton.position(windowWidth/4.6,windowHeight/1.6);
-  googlesearchButton.mousePressed(randgooglesearchresult);
+    textInput = createInput();
+    textInput.position(windowWidth/9,windowHeight/2);
 
   frameRate(2);
 
+  print(table);
+
+  for(let i = 0; i < table.getRowCount(); i++){
+    search = table.getString(i, 'search');
+
+  }
+
 }
 
-function randgooglesearchresult(){
-  randgooglesearchresultNumber = int(random(googlesearchArray.length));
-  googlesearchP.html(googlesearchArray[randgooglesearchresultNumber]);
-  textInput.value(googlesearchArray[randgooglesearchresultNumber]);
-}
+//randomized search generator with txt file
+  //function randgooglesearchresult(){
+    //randgooglesearchresultNumber = int(random(googlesearchArray.length));
+    //googlesearchP.html(googlesearchArray[randgooglesearchresultNumber]);
+    //textInput.value(googlesearchArray[randgooglesearchresultNumber]);
+    //}
 
 var y = 100;
-var x = 200;
+var x = 100;
 
 function draw() {
   textFont(productSansRegular);
@@ -91,14 +108,14 @@ if(y == 100){
   stroke(105,105,105);
   fill(105,105,105);
   ellipse(windowWidth/1.33, windowHeight/3.8, 8);
-  if(x == 200){
+  if(x == 100){
     stroke(207,207,207);
     fill(207,207,207);
     ellipse(windowWidth/1.4, windowHeight/3.8, 8);
-    x = x - 200;
+    x = x - 100;
   }
     else if (x == 0){
-      x = x + 200;
+      x = x + 100;
     }
 
 //third dot
