@@ -4,6 +4,8 @@ let table;
 
 let search;
 
+let img;
+
 //category variables
 let cat1;
 let cat2;
@@ -32,7 +34,11 @@ function preload(){
   //googlesearchArray = loadStrings("txtFiles/googlesearchentries.txt");
   productSansRegular = loadFont('fonts/ProductSans-Regular.ttf');
   table = loadTable('csvFiles/search&categories.csv', 'csv', 'header');
+
+  img = loadImage('images/popup.png');
 }
+
+
 
 function setup() {
   // put setup code here to run once
@@ -186,4 +192,8 @@ else {
 
   textSize(30);
   text('Alanna Tran', windowWidth/1.42, windowHeight/5);
+
+  //image(img,windowWidth/11,windowHeight/9,windowWidth/1.2, windowHeight/1.3);
 }
+
+
